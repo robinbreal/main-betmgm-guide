@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明指南 · betmgm</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #fafaf9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1c1c1e;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .page {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* 顶部导航 */
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0 1.5rem;
+      border-bottom: 1px solid #e4e4e7;
+    }
+
+    .top-nav .logo {
+      font-weight: 500;
+      font-size: 1.22rem;
+      letter-spacing: -0.01em;
+      color: #18181b;
+    }
+
+    .top-nav .meta {
+      font-size: 0.85rem;
+      color: #71717a;
+    }
+
+    .top-nav .meta span {
+      margin-left: 1rem;
+    }
+
+    /* hero 区域 */
+    .hero {
+      margin: 3rem 0 2.4rem;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 520;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      color: #121214;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #3f3f46;
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+
+    .hero .link-wrap {
+      display: inline-block;
+      background: #f3f3f5;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.95rem;
+    }
+
+    /* 核心介绍 */
+    .intro {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      margin: 2.5rem 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      border: 1px solid #ededef;
+    }
+
+    .intro h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      color: #18181b;
+    }
+
+    .intro p {
+      font-size: 0.96rem;
+      color: #3f3f46;
+      margin-bottom: 1rem;
+    }
+
+    .intro p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 三个场景模块 (卡片) */
+    .scenes {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: 2.8rem 0;
+    }
+
+    .scene-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 1.8rem 2rem;
+      border: 1px solid #eaeaec;
+      transition: box-shadow 0.2s;
+    }
+
+    .scene-card:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+    }
+
+    .scene-card .num {
+      display: inline-block;
+      background: #f0f0f2;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #27272a;
+      margin-bottom: 0.8rem;
+    }
+
+    .scene-card h3 {
+      font-weight: 500;
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
+    }
+
+    .scene-card p {
+      color: #52525b;
+      font-size: 0.93rem;
+    }
+
+    /* 常见说明 (FAQ 摘要) */
+    .faq-summary {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 2rem 2.2rem;
+      margin: 2.8rem 0;
+      border: 1px solid #e4e4e7;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #18181b;
+    }
+
+    .faq-item {
+      padding: 1rem 0;
+      border-bottom: 1px solid #f1f1f3;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .faq-item .q {
+      font-weight: 480;
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+      color: #27272a;
+    }
+
+    .faq-item .a {
+      font-size: 0.9rem;
+      color: #52525b;
+      padding-left: 0.2rem;
+    }
+
+    /* 底部 */
+    .footer-note {
+      margin: 3rem 0 1.5rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #a1a1aa;
+      border-top: 1px solid #eaeaec;
+      padding-top: 2rem;
+    }
+
+    .footer-note a {
+      color: #27272a;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 0.5px;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 480px) {
+      body {
+        padding: 1.75rem 1rem;
+      }
+      .hero h1 {
+        font-size: 1.7rem;
+      }
+      .intro,
+      .faq-summary {
+        padding: 1.5rem 1.3rem;
+      }
+      .scene-card {
+        padding: 1.4rem 1.3rem;
+      }
+      .top-nav .meta span {
+        margin-left: 0.6rem;
+        font-size: 0.78rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- 顶部导航 -->
+  <nav class="top-nav">
+    <span class="logo">简明指南</span>
+    <div class="meta">
+      <span>场景</span>
+      <span>说明</span>
+    </div>
+  </nav>
+
+  <!-- hero 区域 -->
+  <div class="hero">
+    <h1>betmgm 访问提醒<br>与简明介绍</h1>
+    <p>一份轻量的导航式说明，帮助你快速了解 betmgm 的基本情况。内容围绕三个常见使用场景展开，末尾附有简短说明。</p>
+    <div class="link-wrap">
+      当前介绍页面 · 关于 <a href="https://main-betmgm.com" style="color:#2563eb; text-decoration: underline;">betmgm</a>
+    </div>
+  </div>
+
+  <!-- 核心介绍 -->
+  <div class="intro">
+    <h2>出发点：简单、清晰、不被干扰</h2>
+    <p>无论你是第一次接触，还是想回顾一些细节，这篇内容都尝试用温和的语气，把主要信息整理在一起。不堆砌术语，也不刻意渲染，只是把该提的事情说清楚。</p>
+    <p>访问任何线上服务前，了解它的基本属性与常见边界总会有帮助。下面三个模块分别对应三种常见的访问场景，你可以按需阅读。</p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="scenes">
+
+    <div class="scene-card">
+      <div class="num">1</div>
+      <h3>日常浏览与了解</h3>
+      <p>如果想先看看 betmgm 提供哪些内容或服务，直接访问主页是最简单的办法。建议使用稳定的网络环境，并确认设备上的浏览器版本保持更新，以获得相对顺畅的体验。</p>
+    </div>
+
+    <div class="scene-card">
+      <div class="num">2</div>
+      <h3>首次访问前的注意</h3>
+      <p>第一次前往某个站点时，不妨花几分钟阅读页面上的条款或使用说明。合理调节浏览器隐私设置、关闭不必要的插件，有时候能让加载过程更稳定。</p>
+    </div>
+
+    <div class="scene-card">
+      <div class="num">3</div>
+      <h3>信息核对与帮助</h3>
+      <p>如果遇到访问缓慢或页面显示异常，可以尝试清除缓存或检查网络连接。许多常见问题都能在站点本身的帮助区域找到解释，不必着急。</p>
+    </div>
+
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <div class="faq-summary">
+    <h2>常见说明</h2>
+
+    <div class="faq-item">
+      <div class="q">betmgm 是什么性质的服务？</div>
+      <div class="a">betmgm 是一个线上平台，提供与娱乐、体育相关的互动内容。具体功能与规则以官方网站公布的信息为准。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">访问时需要注意哪些基本事项？</div>
+      <div class="a">建议使用正规渠道访问，留意当地法律法规。妥善管理个人账户信息，避免在公共设备上保存密码。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">是否支持移动设备访问？</div>
+      <div class="a">绝大多数现代移动浏览器可以正常访问 betmgm 官网。如遇布局错位，可尝试切换至桌面模式或更新浏览器版本。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="q">遇到问题怎么办？</div>
+      <div class="a">可以先检查网络状态，或浏览官网的帮助中心。如果问题持续存在，联系官方客服是最直接的途径。</div>
+    </div>
+
+  </div>
+
+  <!-- 底部 -->
+  <div class="footer-note">
+    <span>一份轻量页面 · 关于 </span>
+    <a href="https://main-betmgm.com">betmgm</a>
+    <span style="display: block; margin-top: 0.6rem; color: #a8a8b3;">内容仅供示意，具体以官方信息为准</span>
+  </div>
+
+</div>
+</body>
+</html>
